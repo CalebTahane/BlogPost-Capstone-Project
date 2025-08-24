@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<header>
+  <h1 class="logo"><a href="#">BlogPost</a></h1>
+  <nav>
+    <ul>
+      <li><a href="/createPost">Create Post</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="post-container">
+  <% posts.forEach(post => { %>
+  <!-- <div class="post">
+    <h2><%= post.title %></h2>
+    <p><%= post.content %></p>
+    
+    <div class="post-reactions"></div>
+  </div> -->
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2><%= post.title %></h2>
+        <h5>Title description, <%= new Date() %></h5>
+        <!-- <div class="fakeimg" style="height: 200px">Image</div> -->
+        <p><%= post.content %>..</p>
+        <div class="post-actions">
+          <form action="/posts/<%= post.id %>/delete" method="POST">
+            <button type="submit">Delete Post</button>
+          </form>
+          <a href="/posts/<%= post.id %>/edit">Edit</a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  <%- include("partials/footer.ejs") %>
+</div>

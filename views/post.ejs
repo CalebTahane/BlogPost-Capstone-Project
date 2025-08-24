@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs")
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<a href="/">Back Home</a>
+<a href="/posts/<%= post.id %>">Edit</a>
+<form action="/posts/<%= post.id %>/delete" method="POST">
+    <button type="submit">Delete</button>
+</form>
+
+<%- include("partials/footer.ejs") %>

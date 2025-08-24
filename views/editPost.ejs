@@ -1,0 +1,15 @@
+<%- include("partials/header.ejs") %>
+
+<%- include("partials/navbar.ejs") %>
+
+<div class="create-container">
+    <h1 class="edit-header">Edit Post</h1>
+    <form action="/posts/<%= post.id %>/edit" method="POST">
+        <input type="text" name="post_title" value="<%= post.title %>" required>
+        <textarea name="post_content" placeholder="edit your content"><%= post.content %></textarea>
+        <a href="/">Cancel</a>
+    </form>
+</div>
+
+
+<%- include("partials/footer.ejs") %> 
